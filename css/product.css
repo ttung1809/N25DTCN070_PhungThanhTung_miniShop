@@ -1,0 +1,130 @@
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 36px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Khung chi tiết sản phẩm: không viền ngoài, ảnh bên trái, thông tin bên phải */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 48px;
+    align-items: start;
+}
+
+/* Tên sản phẩm */
+.product-detail h2 {
+    grid-column: 1 / -1;
+    text-align: left;
+    color: var(--ink);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+}
+
+/* Hình ảnh */
+.product-detail > img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Giá */
+.product-detail .price {
+    color: var(--price);
+    font-size: 30px;
+    font-weight: 800;
+    margin: 4px 0 8px;
+}
+
+/* Mô tả */
+.product-detail > p {
+    line-height: 1.8;
+    color: #403d55;
+}
+
+/* Tiêu đề thông số kỹ thuật */
+.product-detail h3 {
+    grid-column: 1 / -1;
+    color: var(--brand);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 20px 0 0;
+}
+
+/* Bảng thông số kỹ thuật */
+.product-detail table {
+    grid-column: 1 / -1;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.product-detail th,
+.product-detail td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+.product-detail th {
+    background-color: var(--brand);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.product-detail tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.product-detail tbody tr:nth-child(even) {
+    background-color: var(--paper);
+}
+
+.product-detail tbody tr:hover {
+    background-color: #fff4d6;
+}
+
+/* Liên kết quay lại */
+.product-detail > p:last-child {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+}
+
+.product-detail a {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.product-detail a:hover {
+    text-decoration: underline;
+}
+
+/* Màn hình nhỏ: xếp một cột */
+@media (max-width: 720px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .product-detail h2 {
+        font-size: 26px;
+    }
+
+    .product-detail > img {
+        height: 280px;
+    }
+}
